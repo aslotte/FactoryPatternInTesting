@@ -7,18 +7,8 @@ using TestFramework.Factories;
 namespace Tests
 {
     [TestClass]
-    public class UpdatePersonTests
+    public class UpdatePersonTests : BasePersonServiceTests
     {
-        private PersonFactory personFactory;
-        private PersonService unitUnderTest;
-
-        [TestInitialize]
-        public void Setup()
-        {
-            personFactory = new PersonFactory().WithDefault();
-            unitUnderTest = new PersonService();
-        }
-
         [TestMethod]
         public void UpdateId_ShouldUpdateId()
         {
@@ -45,17 +35,6 @@ namespace Tests
 
             //Assert
             Assert.AreEqual(expectedName, person.FirstName);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void SavePerson_IdNotValid_ShouldThrowExpcetion()
-        {
-            //Arrange
-            var person = personFactory.WithId(-1).Create();
-
-            //Act and Assert
-            unitUnderTest.SavePerson(person);
         }
     }
 }

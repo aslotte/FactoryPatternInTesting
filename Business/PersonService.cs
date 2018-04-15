@@ -1,7 +1,5 @@
 ﻿using Domain.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Business
 {
@@ -22,6 +20,11 @@ namespace Business
             if (person.Id < 0) throw new ArgumentException("Id is not valid");
 
             //repository.SavePerson(person);
+        }
+
+        public Person GetPerson(int id)
+        {
+            return new Person(); //should of course get person from repository
         }
     }
 }

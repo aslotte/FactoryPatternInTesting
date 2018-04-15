@@ -48,7 +48,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UpdatePersonTests.cs" />
+    <Compile Include="PersonService\BasePersonServiceTests.cs" />
+    <Compile Include="PersonService\SavePersonTests.cs" />
+    <Compile Include="PersonService\UpdatePersonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
